@@ -1,0 +1,160 @@
+@import url("./reset.css");
+html,
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  padding: 20px;
+}
+.container h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.progress-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.progress-block {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+.progress-block.hidden {
+  opacity: 0;
+}
+.progress-block.animated .progress-circle {
+  animation: rotate 2s linear infinite;
+}
+
+.progress-circle {
+  transform: rotate(-90deg);
+}
+
+.progress-background {
+  fill: none;
+  stroke: #e0e0e0;
+  stroke-width: 6;
+}
+
+.progress-bar {
+  fill: none;
+  stroke: url(#progressGradient);
+  stroke-width: 6;
+  stroke-linecap: square;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.control-group label {
+  font-size: 16px;
+  cursor: pointer;
+}
+.control-group input[type=number] {
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  border: 2px solid #6200ee;
+  border-radius: 20px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  -moz-appearance: textfield;
+}
+.control-group input[type=number]:focus {
+  box-shadow: 0 0 0 2px rgba(98, 0, 238, 0.3);
+}
+.control-group input[type=number]::-webkit-inner-spin-button, .control-group input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.switch input:checked + .slider {
+  background: linear-gradient(to right, #6200ee, #a801f5);
+}
+.switch input:checked + .slider:before {
+  transform: translateX(20px);
+}
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px #6200ee;
+}
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 30px;
+}
+.switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(270deg);
+  }
+}
+@media (orientation: landscape) {
+  .progress-wrapper {
+    flex-direction: row;
+  }
+  .container h1 {
+    margin-bottom: 30px;
+  }
+}/*# sourceMappingURL=styles.css.map */

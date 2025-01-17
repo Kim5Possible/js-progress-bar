@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Progress</h1>
+      <div class="progress-wrapper">
+        <div class="progress-container">
+          <div class="progress-block" id="progressBlock">
+            <svg class="progress-circle" viewBox="0 0 100 100">
+              <defs>
+                <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#6200ee" />
+                  <stop offset="50%" stop-color="#a801f5" />
+                  <stop offset="100%" stop-color="#3816fd" />
+                </linearGradient>
+              </defs>
+              <circle class="progress-background" cx="50" cy="50" r="45" />
+              <circle class="progress-bar" cx="50" cy="50" r="45" />
+            </svg>
+          </div>
+        </div>
+        <div class="controls">
+          <div class="control-group">
+            <input type="number" id="valueInput" min="0" max="100" placeholder="0" />
+            <label for="valueInput">Value</label>
+          </div>
+          <div class="control-group">
+            <label class="switch">
+                <input type="checkbox" id="animateToggle">
+                <span class="slider"></span>
+            </label>
+            <label for="animateToggle">Animate</label>
+        </div>
+        <div class="control-group">
+            <label class="switch">
+                <input type="checkbox" id="hideToggle">
+                <span class="slider"></span>
+            </label>
+            <label for="hideToggle">Hide</label>
+        </div>
+    </div>
+    <script src="./progress.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
